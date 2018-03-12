@@ -1,7 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/dkmiller/SqlHelper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/dkmiller/SqlHelper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dkmiller/SqlHelper</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>SQL</PackageTags>
+    <Description>Lightweight wrapper for one-off SQL queries</Description>
+    <PackageReleaseNotes>1.0.0 - first deployment</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
