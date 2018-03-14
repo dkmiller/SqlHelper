@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace SqlHelper
+namespace SqlWrapperLite
 {
-    public class SqlHelper
+    public static class SqlWrapperLite
     {
         /// <summary>
         /// Creates a connection to a SQL server using the given connection
