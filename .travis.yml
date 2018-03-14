@@ -4,3 +4,9 @@ dotnet: 2.1.4
 script:
   - dotnet restore
   - dotnet build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  on:
+    branch: master
