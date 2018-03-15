@@ -1,14 +1,12 @@
 language: csharp
-mono: none
 dotnet: 2.1.4
-install:
-  - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 script:
   - dotnet restore
   - dotnet build
 deploy:
   skip_cleanup: true
   provider: script
-  script: chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  script:
+    - chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE
   on:
     branch: master

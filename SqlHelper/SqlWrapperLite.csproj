@@ -10,7 +10,9 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>SQL</PackageTags>
     <Description>Lightweight wrapper for one-off SQL queries</Description>
-    <PackageReleaseNotes>1.0.0 - first deployment</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.1 - Query can take a SQL connection
+1.0.0 - first deployment</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
