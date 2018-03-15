@@ -3,4 +3,6 @@
 ApiKey=$1
 Source=$2
 
-nuget push ./SqlHelper/bin/Release/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+mono nuget.exe setApiKey $ApiKey -Source $Source -Verbosity quiet
+
+mono nuget.exe push ./SqlHelper/bin/Release/SqlWrapperLite.*.nupkg -Source $Source
