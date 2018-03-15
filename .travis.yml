@@ -3,13 +3,13 @@ dotnet: 2.1.4
 script:
   - dotnet restore
   - dotnet build
-  - sudo nuget update -Self
-  - nuget push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
+  - curl -O https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  - mono ./nuget.exe # Output NuGet's version number.
+  - mono ./nuget.exe push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
 deploy:
   skip_cleanup: true
   provider: script
   script:
-    - sudo nuget update -Self
     - chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE
   on:
     branch: master
