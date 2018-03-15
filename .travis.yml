@@ -3,8 +3,10 @@ dotnet: 2.1.4
 script:
   - dotnet restore
   - dotnet build
-  - nuget push ./SqlHelper/bin/Release/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
+  - nuget push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
 deploy:
   skip_cleanup: true
+  provider: script
+  script: chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE
   on:
     branch: master
