@@ -3,6 +3,7 @@ dotnet: 2.1.4
 script:
   - dotnet restore
   - dotnet build
+  - sudo nuget update -Self
   - nuget push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
 deploy:
   skip_cleanup: true
