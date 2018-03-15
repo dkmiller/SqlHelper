@@ -3,9 +3,6 @@ dotnet: 2.1.4
 script:
   - dotnet restore
   - dotnet build
-  - curl -O https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-  - mono ./nuget.exe # Output NuGet's version number.
-  - mono ./nuget.exe push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $NUGET_API_KEY -Source $NUGET_SOURCE
 deploy:
   skip_cleanup: true
   provider: script

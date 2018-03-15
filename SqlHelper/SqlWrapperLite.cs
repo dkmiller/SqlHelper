@@ -14,14 +14,23 @@ namespace SqlWrapperLite
         public static IEnumerable<T> Query<T>(string connectionString, string query, Func<SqlDataReader, T> load)
         {
             using (var connection = new SqlConnection(connectionString))
-            {
-                var command = new SqlCommand(query, connection);
+                foreach (var entry in Query(connection, query, load))
+                    yield return entry;
+        }
 
-                using (var reader = command.ExecuteReader())
-                    if (reader.HasRows)
-                        while (reader.Read())
-                            yield return load(reader);
-            }
+        /// <summary>
+        /// Executes the given query using the SQL connection, then returns the
+        /// results transformed via the given function. This does not dispose
+        /// the connection.
+        /// </summary>
+        public static IEnumerable<T> Query<T>(SqlConnection connection, string query, Func<SqlDataReader, T> load)
+        {
+            var command = new SqlCommand(query, connection);
+
+            using (var reader = command.ExecuteReader())
+                if (reader.HasRows)
+                    while (reader.Read())
+                        yield return load(reader);
         }
     }
 }
