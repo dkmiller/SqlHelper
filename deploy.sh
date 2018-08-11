@@ -12,4 +12,4 @@ curl -O https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 mono ./nuget.exe
 
 # Deploy package to nuget.org.
-mono ./nuget.exe push ./SqlHelper/bin/Debug/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+mono ./nuget.exe push ./SqlWrapperLite/bin/Release/SqlWrapperLite.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source

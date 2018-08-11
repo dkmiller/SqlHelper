@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.2</TargetFramework>
+    <TargetFramework>netstandard2</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/dkmiller/SqlHelper/blob/master/LICENSE</PackageLicenseUrl>
@@ -10,14 +10,15 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>SQL</PackageTags>
     <Description>Lightweight wrapper for one-off SQL queries</Description>
-    <PackageReleaseNotes>2.0.0 - Renamed static class to SqlWrapper
+    <PackageReleaseNotes>3.0.0-alpha.1 - ??
+2.0.0 - Renamed static class to SqlWrapper
 1.0.1 - Query can take a SQL connection
 1.0.0 - first deployment</PackageReleaseNotes>
-    <Version>2.0.0</Version>
+    <Version>3.0.0-alpha.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
   </ItemGroup>
 
 </Project>
