@@ -2,12 +2,14 @@
 
 [![Build Status](https://travis-ci.org/dkmiller/SqlHelper.svg?branch=master)](https://travis-ci.org/dkmiller/SqlHelper)
 
+This package is published as: [SqlWrapperLite](https://www.nuget.org/packages/SqlWrapperLite/).
+
 Lightweight wrapper around one-off SQL queries. This is _not_ heavily
 optimized, and should not be used for production scenarios which are grabbing
-massive amounts of dataor making hundreds of queries.
+massive amounts of data, or making hundreds of queries.
 
 On the other hand, if you just want to make a simple query and grab a few
-strings, you can just write code like the following.
+strings, it's easy to write code like the following.
 
 ```csharp
 using SqlWrapperLite;
