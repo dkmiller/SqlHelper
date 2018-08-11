@@ -13,12 +13,11 @@ namespace SqlWrapperLite
         /// </summary>
         public static IList<T> Query<T>(string connectionString, string query, Func<SqlDataReader, T> load)
         {
-            IList<T> result;
             using (var connection = new SqlConnection(connectionString))
             {
-                result = Query<T>(connection, query, load);
+                connection.Open();
+                return Query<T>(connection, query, load);
             }
-            return result;
         }
 
         public static IList<T> Query<T>(string connectionString, string query) =>
@@ -29,15 +28,14 @@ namespace SqlWrapperLite
 
         /// <summary>
         /// Executes the given query using the SQL connection, then returns the
-        /// results transformed via the given function. This does not dispose
-        /// the connection.
+        /// results transformed via the given function. Assumes the connection is
+        /// already open, and does not dispose the connection.
         /// </summary>
         public static IList<T> Query<T>(this SqlConnection connection, string query, Func<SqlDataReader, T> load)
         {
             var result = new List<T>();
             using (var command = new SqlCommand(query, connection))
             {
-                connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
                     if (reader.HasRows)
