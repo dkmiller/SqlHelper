@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/dkmiller/SqlHelper/blob/master/LICENSE</PackageLicenseUrl>
@@ -9,12 +10,13 @@
     <RepositoryUrl>https://github.com/dkmiller/SqlHelper</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>SQL</PackageTags>
-    <Description>Lightweight wrapper for one-off SQL queries</Description>
-    <PackageReleaseNotes>3.0.0-alpha.1 - ??
+    <Description>Lightweight wrapper for one-off SQL queries.</Description>
+    <Version>3.0.0-alpha.2</Version>
+    <PackageReleaseNotes>3.0.0-alpha.2 - Bugfix and extend API
 2.0.0 - Renamed static class to SqlWrapper
 1.0.1 - Query can take a SQL connection
 1.0.0 - first deployment</PackageReleaseNotes>
-    <Version>3.0.0-alpha.1</Version>
+    <Authors>Daniel Miller</Authors>
   </PropertyGroup>
 
   <ItemGroup>
