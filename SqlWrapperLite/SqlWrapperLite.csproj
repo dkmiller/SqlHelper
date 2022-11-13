@@ -11,17 +11,19 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>SQL</PackageTags>
     <Description>Lightweight wrapper for one-off SQL queries.</Description>
-    <Version>3.0.0-alpha.3</Version>
-    <PackageReleaseNotes>3.0.0-alpha.3 - Query(connection) no longer attempts to open the connection
-3.0.0-alpha.2 - Bugfix and extend API
-2.0.0 - Renamed static class to SqlWrapper
-1.0.1 - Query can take a SQL connection
-1.0.0 - first deployment</PackageReleaseNotes>
+    <Version>3.0.1</Version>
+    <PackageReleaseNotes>
+      3.0.1 - Fix security vulnerability
+      3.0.0-alpha.3 - Query(connection) no longer attempts to open the connection
+      3.0.0-alpha.2 - Bugfix and extend API
+      2.0.0 - Renamed static class to SqlWrapper
+      1.0.1 - Query can take a SQL connection
+      1.0.0 - first deployment</PackageReleaseNotes>
     <Authors>Daniel Miller</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>
